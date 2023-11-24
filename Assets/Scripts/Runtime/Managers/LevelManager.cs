@@ -93,15 +93,20 @@ namespace Runtime.Managers
             DOVirtual.DelayedCall(0.1f, () => CoreGameSignals.Instance.onLevelInitialize?.Invoke(GetLevelID()));
             CoreUISignals.Instance.onCloseAllPanels?.Invoke();
             CoreUISignals.Instance.onOpenPanel?.Invoke(UIPanelTypes.Start, 0);
+            CoreUISignals.Instance.onOpenPanel?.Invoke(UIPanelTypes.Level, 1);
+            CoreUISignals.Instance.onOpenPanel?.Invoke(UIPanelTypes.Shop, 2);
+
         }
 
         private void OnRestartLevel()
         {
+            SaveDistributorManager.SaveData();
             CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
             DOVirtual.DelayedCall(0.1f, () => CoreGameSignals.Instance.onLevelInitialize?.Invoke(GetLevelID()));
             CoreUISignals.Instance.onCloseAllPanels?.Invoke();
             CoreUISignals.Instance.onOpenPanel?.Invoke(UIPanelTypes.Start, 0);
-            SaveDistributorManager.SaveData();
+            CoreUISignals.Instance.onOpenPanel?.Invoke(UIPanelTypes.Level, 1);
+            CoreUISignals.Instance.onOpenPanel?.Invoke(UIPanelTypes.Shop, 2);
         }
     }
 }
