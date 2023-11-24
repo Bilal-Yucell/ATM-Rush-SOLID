@@ -9,7 +9,7 @@ namespace Runtime.Signals
     public class CoreGameSignals : MonoSingleton<CoreGameSignals>
     {
         public UnityAction<GameStates> onChangeGameStates = delegate { };
-        public UnityAction<byte> onLevelInitialize = delegate { };
+        public UnityAction<int> onLevelInitialize = delegate { };
         public UnityAction onClearActiveLevel = delegate { };
         public UnityAction onLevelSuccessful = delegate { };
         public UnityAction onLevelFailed = delegate { };
@@ -17,13 +17,14 @@ namespace Runtime.Signals
         public UnityAction onRestartLevel = delegate { };
         public UnityAction onPlay = delegate { };
         public UnityAction onReset = delegate { };
-        public Func<byte> onGetLevelID = delegate { return 0; };
+        public Func<int> onGetLevelID = delegate { return 0; };
 
-        public UnityAction onMiniGameEntered = delegate { };
+        public UnityAction onConveyor = delegate { };
         public UnityAction<GameObject> onAtmTouched = delegate { };
         public UnityAction onMiniGameStart = delegate { };
 
-
+        public UnityAction onClickIncome = delegate { };
+        public UnityAction onClickStack = delegate { };
 
         public Func<byte> onGetIncomeLevel = delegate { return 0; };
         public Func<byte> onGetStackLevel = delegate { return 0; };
