@@ -1,5 +1,6 @@
 using DG.Tweening;
 using Runtime.Commands.Level;
+using Runtime.Enums;
 using Runtime.Signals;
 using UnityEngine;
 

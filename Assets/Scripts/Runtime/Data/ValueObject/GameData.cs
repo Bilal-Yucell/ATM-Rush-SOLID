@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Runtime.Interfaces;
 using UnityEngine;
 
 public class GameData : ISaveableEntity
